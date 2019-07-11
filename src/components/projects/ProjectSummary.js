@@ -2,12 +2,19 @@ import React from 'react'
 
 const ProjectSummary = () => {
   return (
-    <div className="card z-depth-0 project-summary">
-      <span className="card-title">
-        Project Title
-        </span>
-      <p> Posted By</p>
-      <p className="grey-text">3rd MARCH</p>
+    <div class="row">
+      <div class="col">
+        <div class="card ">
+          <div class="card-content">
+            <span class="card-title">Project Tffffffffffffffffffffff
+              ffffffffffitle</span>
+            <p>Posted By.</p>
+          </div>
+          <div class="card-action">
+            <p>3rd MARCHy</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
