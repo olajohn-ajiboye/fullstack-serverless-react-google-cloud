@@ -7,10 +7,10 @@ const ProjectSummary = ({ project }) => {
         <div style={{ minWidth: `200px` }} className="card ">
           <div className="card-content">
             <span className="card-title">{project.title}</span>
-            <p>Posted By.</p>
+            <p>{project.content}</p>
           </div>
           <div className="card-action">
-            <p>3rd MARCHy</p>
+            <p>3rd September, 2019</p>
           </div>
         </div>
       </div>
