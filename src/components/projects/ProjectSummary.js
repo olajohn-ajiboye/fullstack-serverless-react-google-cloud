@@ -1,16 +1,15 @@
 import React from 'react'
 
-const ProjectSummary = () => {
+const ProjectSummary = ({ project }) => {
   return (
-    <div class="row">
-      <div class="col">
-        <div class="card ">
-          <div class="card-content">
-            <span class="card-title">Project Tffffffffffffffffffffff
-              ffffffffffitle</span>
+    <div className="row">
+      <div className="col">
+        <div className="card ">
+          <div className="card-content">
+            <span className="card-title">{project.title}</span>
             <p>Posted By.</p>
           </div>
-          <div class="card-action">
+          <div className="card-action">
             <p>3rd MARCHy</p>
           </div>
         </div>
