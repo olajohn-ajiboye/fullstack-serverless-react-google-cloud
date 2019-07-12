@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
-export default class SignIn extends Component {
+export default class CreateProject extends Component {
   state = {
-    email: '',
-    password: ' '
+    title: '',
+    content: ' ',
+    firstName: '',
+    lastName: ''
   }
   handleChange = (e) => {
     this.setState({
@@ -19,22 +21,21 @@ export default class SignIn extends Component {
       <div className="container mt-3">
         <form onSubmit={(e) => this.handleSubmit(e)} className="white mt-3">
           <h5 className="grey-text text-darken-3">
-            Sign In
+            Sign Up
           </h5>
           <div className="input-field">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" onChange={(e) => this.handleChange(e)} />
+            <label htmlFor="Title">Title</label>
+            <input type="text" id="Title" onChange={(e) => this.handleChange(e)} />
           </div>
           <div className="input-field">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" onChange={(e) => this.handleChange(e)} />
+            <label htmlFor="content">content</label>
+            <textarea name="content" id="" className="materialize-textarea" onChange={(e) => this.handleChange(e)}></textarea>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button className="btn pink lighten-1 z-depth-0">Create</button>
           </div>
         </form>
       </div>
     )
   }
 }
-
