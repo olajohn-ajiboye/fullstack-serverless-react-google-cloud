@@ -1,4 +1,8 @@
-export default {
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth'
+
+var config = {
   apiKey: "AIzaSyA4feobEd42xpVThTcPvaw8M7R-GiuBAoQ",
   authDomain: "auth-aac68.firebaseapp.com",
   databaseURL: "https://auth-aac68.firebaseio.com",
@@ -8,3 +12,5 @@ export default {
   appId: "1:968729290782:web:1ee8e48743e2c226"
 };
 
+firebase.initializeApp(config);
+export default firebase;

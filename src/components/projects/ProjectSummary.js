@@ -4,7 +4,7 @@ const ProjectSummary = ({ project }) => {
   return (
     <div className="row">
       <div className="col">
-        <div className="card ">
+        <div style={{ minWidth: `200px` }} className="card ">
           <div className="card-content">
             <span className="card-title">{project.title}</span>
             <p>Posted By.</p>
