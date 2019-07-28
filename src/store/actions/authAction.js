@@ -1,5 +1,5 @@
 export const signIn = (credentials) => {
-  return (dispatch, getState, {getFirebase}) => {
+  return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
 
     firebase.auth().signInWithEmailAndPassword(
@@ -14,8 +14,22 @@ export const signIn = (credentials) => {
   }
 }
 
+export const signInWithGoogle = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+      .then((result) => {
+        dispatch({ type: 'GOOGLE_SIGNIN_SUCCESFUL' })
+      }).catch((err) => {
+        dispatch({ type: 'GOOGLE_SIGNIN_ERROR' })
+      })
+  }
+}
 export const signOut = () => {
-  return (dispatch, getState, {getFirebase}) => {
+  return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
 
     firebase.auth().signOut().then(() => {
@@ -25,7 +39,7 @@ export const signOut = () => {
 }
 
 export const signUp = (newUser) => {
-  return (dispatch, getState, {getFirebase, getFirestore}) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
 
@@ -41,7 +55,7 @@ export const signUp = (newUser) => {
     }).then(() => {
       dispatch({ type: 'SIGNUP_SUCCESS' });
     }).catch((err) => {
-      dispatch({ type: 'SIGNUP_ERROR', err});
+      dispatch({ type: 'SIGNUP_ERROR', err });
     });
   }
 }

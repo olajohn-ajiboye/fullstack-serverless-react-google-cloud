@@ -8,6 +8,7 @@ import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 import ProjectList from './components/projects/ProjectList'
+import GoogleLogin from './components/auth/GoogleLogin';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
+            <Route path='/google' component={GoogleLogin} />
           </Switch>
         </div>
       </BrowserRouter>
