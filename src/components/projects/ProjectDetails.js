@@ -1,10 +1,12 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 const ProjectDetails = (props) => {
+  // const { auth } = props
+  //  if (!auth.uid) return <Redirect to='/signin'></Redirect>
   const { id } = props.match.params
   return (
-    <>
-      <h5> Lord is Good</h5>
+    <div>
       <div className="container section project-details">
         <div className="card z-depth-0">
           <div className="card-content">
@@ -19,7 +21,7 @@ const ProjectDetails = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

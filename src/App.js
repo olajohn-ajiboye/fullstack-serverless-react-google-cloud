@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
@@ -6,31 +7,27 @@ import ProjectDetails from './components/projects/ProjectDetails'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
-
-import './App.css';
-
-
+import ProjectList from './components/projects/ProjectList'
+import GoogleLogin from './components/auth/GoogleLogin';
 
 class App extends Component {
   render() {
-
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar></Navbar>
+          <Navbar />
           <Switch>
-            <Route exact path="/" component={Dashboard}></Route>
-            <Route path="/project/:id" component={ProjectDetails}></Route>
-            <Route path="/signin" component={SignIn}></Route>
-            <Route path="/signup" component={SignUp}></Route>
-            <Route path="/create" component={CreateProject}></Route>
+            <Route exact path='/' component={Dashboard} />
+            <Route exact path='/' component={ProjectList} />
+            <Route path='/project/:id' component={ProjectDetails} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/create' component={CreateProject} />
           </Switch>
-
         </div>
       </BrowserRouter>
-
     );
   }
 }
 
-export default App
+export default App;
