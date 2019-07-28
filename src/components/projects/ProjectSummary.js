@@ -1,6 +1,9 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
-const ProjectSummary = ({ project }) => {
+const ProjectSummary = (props) => {
+  const { project, auth } = props
+  // if (!auth.uid) return <Redirect to='/signin'></Redirect>
   return (
     <div className="row">
       <div className="col">

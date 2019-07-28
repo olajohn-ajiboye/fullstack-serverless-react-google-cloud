@@ -23,7 +23,6 @@ class App extends Component {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
-            <Route path='/google' component={GoogleLogin} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -1,8 +1,10 @@
 import React from 'react'
 import ProjectSummary from './ProjectSummary'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
-const ProjectList = ({ projects }) => {
+const ProjectList = (props) => {
+  const { projects, auth } = props
+  // if (!auth.uid) return <Redirect to='/signin'></Redirect>
   return (
     <div className="project-list section">
       {projects && projects.map(project => {

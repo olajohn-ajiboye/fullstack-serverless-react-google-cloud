@@ -1,6 +1,9 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 const ProjectDetails = (props) => {
+  // const { auth } = props
+  //  if (!auth.uid) return <Redirect to='/signin'></Redirect>
   const { id } = props.match.params
   return (
     <div>

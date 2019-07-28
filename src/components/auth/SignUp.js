@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+import { signUp } from '../../store/actions/authAction'
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   state = {
     email: '',
     password: ' ',
@@ -15,8 +18,11 @@ export default class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
+    this.props.signUp(this.state)
   }
   render() {
+    const { auth, authError } = this.props
+    if (auth.uid) return <Redirect to='/'></Redirect>
     return (
       <div className="container mt-3">
         <form onSubmit={(e) => this.handleSubmit(e)} className="white mt-3">
@@ -40,10 +46,26 @@ export default class SignUp extends Component {
             <input type="text" id="lastName" onChange={(e) => this.handleChange(e)} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button className="btn pink lighten-1 z-depth-0">Sign UP</button>
+            <div className="red-text center">
+              {authError ? <p>{authError}</p> : null}
+            </div>
           </div>
         </form>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth,
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
